@@ -5,7 +5,7 @@ defmodule CloudWatch.Mixfile do
     [
       app: :cloud_watch,
       version: "0.3.2",
-      elixir: "~> 1.5",
+      elixir: "~> 1.8",
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
       deps: deps(),
@@ -39,7 +39,7 @@ defmodule CloudWatch.Mixfile do
   defp deps do
     [
       {:aws, "~> 0.5.0", optional: true},
-      {:httpoison, "~> 0.11.1"},
+      {:httpoison, "~> 1.5", override: true},
       {:credo, "~> 0.4.13", only: :dev},
       {:mock, "~> 0.3.2", only: :test},
       {:ex_doc, ">= 0.0.0", only: :dev}
